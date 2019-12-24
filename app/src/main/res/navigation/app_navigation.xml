@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/app_navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.simplequiz.TitleFragment"
+        android:label="TitleFragment" >
+        <action
+            android:id="@+id/action_titleFragment_to_quizFragment3"
+            app:destination="@id/quizFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment3"
+        android:name="com.example.simplequiz.QuizFragment"
+        android:label="QuizFragment" />
+</navigation>
