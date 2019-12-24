@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:src="@drawable/correctanswer"
+                style="@style/ImageStyle"
+                android:background="#FFFFFF"
+                >
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="22sp"
+                android:text="Your Score"
+                android:layout_marginTop="10dp"
+                >
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_score"
+                tools:text="100"
+                style="@style/ScoreStyle">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_share_black"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/score_share">
+
+            </ImageView>
+
+
+            <Button
+                android:id="@+id/btn_play_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ButtonStyle"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text=" Play Next "
+                >
+
+            </Button>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp"
+                android:id="@+id/yourwronganswer"
+                android:text="Your wrong answers - "
+                android:visibility="gone"
+                >
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/txt_wrong_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="this is a wrong answer"
+                style="@style/WrongAnswersStyle"
+                android:visibility="gone">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
