@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="quiz"
+            type="com.example.simplequiz.QuizFragment" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,6 +29,7 @@
             android:layout_height="wrap_content"
             style="@style/MediumTextStyle"
             tools:text="Which is the Independence day of Bangladesh?"
+            android:text="@{quiz.currentQuestion.theQuestion}"
 
             />
 
@@ -40,6 +47,7 @@
                     style="@style/AnswerTextStyle"
                     android:id="@+id/option1"
                     tools:text="Option1"
+                    android:text="@{quiz.answers[0]}"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -47,6 +55,7 @@
                     style="@style/AnswerTextStyle"
                     android:id="@+id/option2"
                     tools:text="Option1"
+                    android:text="@{quiz.answers[1]}"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -54,6 +63,7 @@
                     style="@style/AnswerTextStyle"
                     android:id="@+id/option3"
                     tools:text="Option1"
+                    android:text="@{quiz.answers[2]}"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -61,6 +71,7 @@
                     style="@style/AnswerTextStyle"
                     android:id="@+id/option4"
                     tools:text="Option1"
+                    android:text="@{quiz.answers[3]}"
                     />
 
 
