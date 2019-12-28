@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.simplequiz.databinding.FragmentQuizGameBinding
 import kotlinx.android.synthetic.main.fragment_quiz_game.*
 
@@ -50,7 +51,7 @@ class QuizFragment : Fragment() {
     lateinit var answers:ArrayList<String>
     lateinit var selectedAnswer:String
     var score:Int = 0
-
+    var wrongAnswerList:ArrayList<String> = ArrayList()
     private fun setQuestion(){
         currentQuestion = questions[questionIndex]
         answers = ArrayList(currentQuestion.answerGroup)
@@ -59,7 +60,7 @@ class QuizFragment : Fragment() {
         Log.d("ANSWERGROUP", answers[0]+ " "+answers[1]+ " "+answers[2]+ " "+answers[3]+ " ")
         Log.d("REALANSWER", currentQuestion.answerGroup[0])
 
-        binding.invalidateAll()
+
 
     }
 
@@ -101,6 +102,9 @@ class QuizFragment : Fragment() {
         if(answer.equals(currentQuestion.answerGroup[0])){
             score+=1
         }
+        else{
+            wrongAnswerList.add(currentQuestion.theQuestion)
+        }
         questionIndex++
         if(questionIndex<=maxNumberOfQuestion){
             setQuestion()
@@ -113,11 +117,13 @@ class QuizFragment : Fragment() {
 
     private fun getScore(){
         if(score>=2){
+        val action = QuizFragmentDirections.actionQuizFragment3ToQuizWonFragment(score,wrongAnswerList.toTypedArray())
+            view!!.findNavController().navigate(action)
 
-            Navigation.findNavController(view!!).navigate(R.id.action_quizFragment3_to_quizWonFragment)
         }
         else{
-            Navigation.findNavController(view!!).navigate(R.id.action_quizFragment3_to_quizLostFragment)
+           val action = QuizFragmentDirections.actionQuizFragment3ToQuizLostFragment(score,wrongAnswerList.toTypedArray())
+            view!!.findNavController().navigate(action)
         }
     }
 

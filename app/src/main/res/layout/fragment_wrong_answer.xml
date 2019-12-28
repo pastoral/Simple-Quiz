@@ -3,6 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
 >
+    <data>
+        <variable
+            name="quizlost"
+            type="com.example.simplequiz.QuizLostFragment" />
+    </data>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_score"
                 tools:text="100"
+                android:text="@{quizlost.earnedScore}"
                 style="@style/ScoreStyle">
 
             </TextView>
@@ -59,6 +65,7 @@
                     android:layout_height="wrap_content"
                     tools:text="this is a wrong answer"
                     style="@style/WrongAnswersStyle"
+                    android:text="@{quizlost.wrongAnswerText}"
                     android:visibility="gone">
 
                 </TextView>

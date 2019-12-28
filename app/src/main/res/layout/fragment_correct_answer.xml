@@ -2,6 +2,11 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="quizwon"
+            type="com.example.simplequiz.QuizWonFragment" />
+    </data>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -26,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textSize="22sp"
-                android:text="Your Score"
+                android:text="Score"
                 android:layout_marginTop="10dp"
                 >
             </TextView>
@@ -36,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_score"
                 tools:text="100"
-                style="@style/ScoreStyle">
+                style="@style/ScoreStyle"
+                android:text="@{quizwon.earnedScore}">
 
             </TextView>
 
@@ -81,7 +87,8 @@
                 android:layout_height="wrap_content"
                 tools:text="this is a wrong answer"
                 style="@style/WrongAnswersStyle"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:text="@{quizwon.wrongAnswerText}">
 
             </TextView>
 

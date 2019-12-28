@@ -34,6 +34,12 @@
             android:id="@+id/action_quizWonFragment_to_titleFragment"
             app:destination="@id/titleFragment"
             app:popUpTo="@+id/titleFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrongAnswers"
+            app:argType="string[]" />
     </fragment>
     <fragment
         android:id="@+id/quizLostFragment"
@@ -43,5 +49,11 @@
             android:id="@+id/action_quizLostFragment_to_titleFragment"
             app:destination="@id/titleFragment"
             app:popUpTo="@+id/titleFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrongAnswers"
+            app:argType="string[]" />
     </fragment>
 </navigation>
