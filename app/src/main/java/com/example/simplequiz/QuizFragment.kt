@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.simplequiz.databinding.FragmentQuizGameBinding
+import kotlinx.android.synthetic.main.fragment_quiz_game.*
 
 
 /**
@@ -19,7 +21,7 @@ class QuizFragment : Fragment() {
    lateinit var binding: FragmentQuizGameBinding
     lateinit var currentQuestion:Question
     private var questionIndex = 0
-    private val maxNumberOfQuestion = 7
+    private val maxNumberOfQuestion = 3
 
     var questions:ArrayList<Question> = arrayListOf(
         Question("Which is the Independence day of Bangladesh?",
@@ -46,6 +48,7 @@ class QuizFragment : Fragment() {
 
     lateinit var answers:ArrayList<String>
     lateinit var selectedAnswer:String
+    var score:Int = 0
 
     private fun setQuestion(){
         currentQuestion = questions[questionIndex]
@@ -74,6 +77,46 @@ class QuizFragment : Fragment() {
         randomQuestion()
         binding.quiz=this
         return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        option1.setOnClickListener{
+            checkAnswer(option1.text.toString())
+        }
+        option2.setOnClickListener{
+            checkAnswer(option2.text.toString())
+        }
+        option3.setOnClickListener{
+            checkAnswer(option3.text.toString())
+        }
+        option4.setOnClickListener{
+            checkAnswer(option4.text.toString())
+        }
+
+    }
+
+    private fun checkAnswer(answer:String){
+        if(answer.equals(currentQuestion.answerGroup[0])){
+            score+=1
+        }
+        questionIndex++
+        if(questionIndex<=maxNumberOfQuestion){
+            setQuestion()
+            binding.invalidateAll()
+        }
+        else{
+            getScore()
+        }
+    }
+
+    private fun getScore(){
+        if(score>=2){
+            Toast.makeText(activity,"WIN",Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Toast.makeText(activity,"LOOSE",Toast.LENGTH_SHORT).show()
+        }
     }
 
 
