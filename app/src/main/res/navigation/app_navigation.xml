@@ -14,5 +14,34 @@
     <fragment
         android:id="@+id/quizFragment3"
         android:name="com.example.simplequiz.QuizFragment"
-        android:label="QuizFragment" />
+        android:label="QuizFragment" >
+        <action
+            android:id="@+id/action_quizFragment3_to_quizWonFragment"
+            app:destination="@id/quizWonFragment"
+            app:popUpTo="@+id/quizFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizFragment3_to_quizLostFragment"
+            app:destination="@id/quizLostFragment"
+            app:popUpTo="@+id/quizFragment3"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizWonFragment"
+        android:name="com.example.simplequiz.QuizWonFragment"
+        android:label="Won Quiz" >
+        <action
+            android:id="@+id/action_quizWonFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizLostFragment"
+        android:name="com.example.simplequiz.QuizLostFragment"
+        android:label="Lost Quiz" >
+        <action
+            android:id="@+id/action_quizLostFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment" />
+    </fragment>
 </navigation>

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.example.simplequiz.databinding.FragmentQuizGameBinding
 import kotlinx.android.synthetic.main.fragment_quiz_game.*
 
@@ -112,12 +113,12 @@ class QuizFragment : Fragment() {
 
     private fun getScore(){
         if(score>=2){
-            Toast.makeText(activity,"WIN",Toast.LENGTH_SHORT).show()
+
+            Navigation.findNavController(view!!).navigate(R.id.action_quizFragment3_to_quizWonFragment)
         }
         else{
-            Toast.makeText(activity,"LOOSE",Toast.LENGTH_SHORT).show()
+            Navigation.findNavController(view!!).navigate(R.id.action_quizFragment3_to_quizLostFragment)
         }
     }
-
 
 }
