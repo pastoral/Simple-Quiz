@@ -16,7 +16,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            tools:src="@drawable/profilepic"
+            android:src="@drawable/profilepic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/txt_name"
-            tools:text="Peter"
+            android:text="Peter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userimage"
@@ -48,7 +48,7 @@
         <TextView
             android:id="@+id/txt_email"
             style="@style/TextBoxStyle"
-            tools:text="email"
+            android:text="email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"

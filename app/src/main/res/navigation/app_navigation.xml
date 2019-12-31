@@ -56,4 +56,8 @@
             android:name="wrongAnswers"
             app:argType="string[]" />
     </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.simplequiz.UserProfileFragment"
+        android:label="UserProfileFragment" />
 </navigation>
