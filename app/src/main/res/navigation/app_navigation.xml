@@ -10,6 +10,9 @@
         <action
             android:id="@+id/action_titleFragment_to_quizFragment3"
             app:destination="@id/quizFragment3" />
+        <action
+            android:id="@+id/action_titleFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment3"
@@ -60,4 +63,12 @@
         android:id="@+id/userProfileFragment"
         android:name="com.example.simplequiz.UserProfileFragment"
         android:label="UserProfileFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.simplequiz.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>
