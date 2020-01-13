@@ -44,6 +44,7 @@ class LoginFragment : Fragment() {
                 .setAvailableProviders(providers)
                 .setTheme(R.style.LoginUIStyle)
                 .setLogo(R.drawable.auth_logo)
+                .setIsSmartLockEnabled(false)
                 .build(), RC_SIGN
 
         )

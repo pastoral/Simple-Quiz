@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "225050715419",
-    "firebase_url": "https://simplequiz-f70e7.firebaseio.com",
-    "project_id": "simplequiz-f70e7",
-    "storage_bucket": "simplequiz-f70e7.appspot.com"
+    "project_number": "1033415814451",
+    "firebase_url": "https://simplequiz-c8800.firebaseio.com",
+    "project_id": "simplequiz-c8800",
+    "storage_bucket": "simplequiz-c8800.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:225050715419:android:8d271651a8e3eab9219fbe",
+        "mobilesdk_app_id": "1:1033415814451:android:36dc17d17066345707a246",
         "android_client_info": {
           "package_name": "com.example.simplequiz"
         }
       },
       "oauth_client": [
         {
-          "client_id": "225050715419-upsa3vuup6098jhoa30f4snn8ej3bign.apps.googleusercontent.com",
+          "client_id": "1033415814451-jhq6656qs0hm5sn0chts184fjiiommo2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.simplequiz",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "225050715419-tkncl3hm25s7nqj21g07dljo4lk465e5.apps.googleusercontent.com",
+          "client_id": "1033415814451-h1mtgcu74kq2sevmacjq43vi5amige60.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBywjtZvUj3KF7SZ3-XYTbXN2zQQqp-Ads"
+          "current_key": "AIzaSyAvXJirVo53pSTXBj6_2NS9mVbc6RNCtf8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "225050715419-tkncl3hm25s7nqj21g07dljo4lk465e5.apps.googleusercontent.com",
+              "client_id": "1033415814451-h1mtgcu74kq2sevmacjq43vi5amige60.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

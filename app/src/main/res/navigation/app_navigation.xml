@@ -62,7 +62,11 @@
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="com.example.simplequiz.UserProfileFragment"
-        android:label="UserProfileFragment" />
+        android:label="UserProfileFragment" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.simplequiz.LoginFragment"
