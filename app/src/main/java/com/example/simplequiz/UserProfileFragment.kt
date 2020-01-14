@@ -1,6 +1,9 @@
 package com.example.simplequiz
 
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,7 +25,8 @@ import kotlinx.android.synthetic.main.fragment_user_profile.*
  */
 class UserProfileFragment : Fragment() {
     val user = FirebaseAuth.getInstance().currentUser
-
+    var highestScore:String = "0"
+    lateinit var sharedPreferences: SharedPreferences
     lateinit var binding: FragmentUserProfileBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +54,9 @@ class UserProfileFragment : Fragment() {
                 .placeholder(R.drawable.profilepic)
                 .into(userimage)
         }
+        sharedPreferences = activity!!.getSharedPreferences("SP_HIGH_SCORE", MODE_PRIVATE)
+        highestScore = sharedPreferences.getInt("HIGHESTSCORE",0).toString()
+
     }
 
 

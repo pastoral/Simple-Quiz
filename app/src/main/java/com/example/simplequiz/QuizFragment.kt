@@ -1,6 +1,8 @@
 package com.example.simplequiz
 
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -24,6 +26,7 @@ class QuizFragment : Fragment() {
     lateinit var currentQuestion:Question
     private var questionIndex = 0
     private val maxNumberOfQuestion = 3
+    lateinit var sharedPreferences: SharedPreferences
 
     var questions:ArrayList<Question> = arrayListOf(
         Question("Which is the Independence day of Bangladesh?",
@@ -96,6 +99,8 @@ class QuizFragment : Fragment() {
             checkAnswer(option4.text.toString())
         }
 
+        sharedPreferences = activity!!.getSharedPreferences("SP_HIGH_SCORE", MODE_PRIVATE)
+
     }
 
     private fun checkAnswer(answer:String){
@@ -116,6 +121,13 @@ class QuizFragment : Fragment() {
     }
 
     private fun getScore(){
+        var highestScore = sharedPreferences.getInt("HIGHESTSCORE",0)
+        if (score>highestScore){
+            val editor = sharedPreferences.edit()
+            editor.putInt("HIGHESTSCORE",score)
+            editor.apply()
+
+        }
         if(score>=2){
         val action = QuizFragmentDirections.actionQuizFragment3ToQuizWonFragment(score,wrongAnswerList.toTypedArray())
             view!!.findNavController().navigate(action)
